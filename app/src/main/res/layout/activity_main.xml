@@ -7,30 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/etMail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="100dp"
-        android:textSize="22sp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Ingrese un mail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/btGuardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="64dp"
-        android:onClick="guardarMail"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="56dp"
+        android:onClick="guardarBitacora"
         android:text="Guardar"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etMail" />
+        app:layout_constraintTop_toBottomOf="@+id/etBitacora" />
 
     <Button
         android:id="@+id/btPag1"
@@ -53,5 +40,18 @@
         android:text="AGENDA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btPag1" />
+
+    <EditText
+        android:id="@+id/etBitacora"
+        android:layout_width="369dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="72dp"
+        android:ems="10"
+        android:background="#A08DC4"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

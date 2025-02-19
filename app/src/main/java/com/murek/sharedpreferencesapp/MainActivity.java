@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.murek.sharedpreferencesapp.databinding.ActivityMainBinding;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,18 +30,41 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Leer el correo electrónico guardado al iniciar la app
-        SharedPreferences preferences = getSharedPreferences("mi_mail", Context.MODE_PRIVATE);
-        String mail = preferences.getString("mail", "");
-        binding.etMail.setText(mail);
+        String archivos[] = fileList();
+        if (archivosExiste(archivos, "informacion")) {
+            try {
+                InputStreamReader archivo = new InputStreamReader(openFileInput("informacion"));
+                BufferedReader br = new BufferedReader(archivo);
+                String linea = br.readLine();
+                String lineaTodas = "";
+
+                while (linea != null) {
+                    lineaTodas += linea + "\n";
+                    linea = br.readLine();
+                }
+                br.close();
+                archivo.close();
+                binding.etBitacora.setText(lineaTodas);
+            } catch (Exception e) {
+            }
+        }
     }
 
-    public void guardarMail(View view) {
-        String mail = binding.etMail.getText().toString();
-        SharedPreferences preferences = getSharedPreferences("mi_mail", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("mail", mail);
-        editor.commit();
+    public boolean archivosExiste(String archivos [] , String NombreArchivo) {
+        for (int i = 0; i < archivos.length; i++) {
+            if (NombreArchivo.equals(archivos[i])) return true;
+        }
+        return false;
+    }
+
+    public void guardarBitacora(View view) {
+        try {
+            OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput("informacion", Context.MODE_PRIVATE));
+            archivo.write(binding.etBitacora.getText().toString());
+            archivo.flush(); //limpia
+            archivo.close();
+        } catch (Exception e) {}
+        Toast.makeText(this, "Bitacora guardada", Toast.LENGTH_SHORT).show();
         finish();
     }
 
