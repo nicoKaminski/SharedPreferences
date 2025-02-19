@@ -1,6 +1,7 @@
 package com.murek.sharedpreferencesapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
         editor.putString("mail", mail);
         editor.commit();
         finish();
+    }
+
+    public void irPag1(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void irPag2(View view) {
+        Intent intent = new Intent(this, AgendaActivity.class);
+        startActivity(intent);
     }
 
 }

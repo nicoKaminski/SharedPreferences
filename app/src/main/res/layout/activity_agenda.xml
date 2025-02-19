@@ -5,32 +5,33 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".AgendaActivity">
 
     <EditText
-        android:id="@+id/etMail"
+        android:id="@+id/etNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="100dp"
-        android:textSize="22sp"
         android:ems="10"
+        android:hint="Ingrese un nombre"
         android:inputType="text"
-        android:hint="Ingrese un mail"
+        android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btGuardar"
+        android:id="@+id/btGuardar2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="64dp"
-        android:onClick="guardarMail"
+        android:layout_marginTop="72dp"
+        android:onClick="guardarInfo"
         android:text="Guardar"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etMail" />
+        app:layout_constraintTop_toBottomOf="@+id/etInfo" />
 
     <Button
         android:id="@+id/btPag1"
@@ -53,5 +54,30 @@
         android:text="AGENDA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btPag1" />
+
+    <EditText
+        android:id="@+id/etInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:hint="Datos del contacto"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNombre" />
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="72dp"
+        android:onClick="buscarInfo"
+        android:text="Buscar"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/btGuardar2"
+        app:layout_constraintTop_toBottomOf="@+id/etInfo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
