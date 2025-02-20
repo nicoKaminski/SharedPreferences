@@ -5,33 +5,58 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AgendaActivity">
-
-    <EditText
-        android:id="@+id/etNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="100dp"
-        android:ems="10"
-        android:hint="Ingrese un nombre"
-        android:inputType="text"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".SdActivity">
 
     <Button
-        android:id="@+id/btGuardar2"
+        android:id="@+id/btGuardarNota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="72dp"
-        android:onClick="guardarInfo"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="56dp"
+        android:onClick="guardarNota"
         android:text="Guardar"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etInfo" />
+        app:layout_constraintTop_toBottomOf="@+id/etNotas" />
+
+    <EditText
+        android:id="@+id/etNotas"
+        android:layout_width="369dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="56dp"
+        android:background="#3C763E"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNombreNota" />
+
+    <Button
+        android:id="@+id/btConsultarNota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="56dp"
+        android:onClick="consultarNota"
+        android:text="Consultar"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/btGuardarNota"
+        app:layout_constraintTop_toBottomOf="@+id/etNotas" />
+
+    <EditText
+        android:id="@+id/etNombreNota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Ingrese nombre de nota"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btPag1"
@@ -65,30 +90,5 @@
         android:text="NOTAS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnPag2" />
-
-    <EditText
-        android:id="@+id/etInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="52dp"
-        android:ems="10"
-        android:hint="Datos del contacto"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNombre" />
-
-    <Button
-        android:id="@+id/btnBuscar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="72dp"
-        android:onClick="buscarInfo"
-        android:text="Buscar"
-        android:textSize="20dp"
-        app:layout_constraintStart_toEndOf="@+id/btGuardar2"
-        app:layout_constraintTop_toBottomOf="@+id/etInfo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

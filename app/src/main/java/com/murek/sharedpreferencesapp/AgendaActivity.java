@@ -49,9 +49,6 @@ public class AgendaActivity extends AppCompatActivity {
         }
     }
 
-
-
-
     public void irPag1(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
@@ -62,5 +59,9 @@ public class AgendaActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void irPag3(View view) {
+        Intent intent = new Intent(this, SdActivity.class);
+        startActivity(intent);
+    }
 
 }

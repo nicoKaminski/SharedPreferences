@@ -78,4 +78,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void irPag3(View view) {
+        Intent intent = new Intent(this, SdActivity.class);
+        startActivity(intent);
+    }
+
 }

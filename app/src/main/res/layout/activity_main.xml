@@ -19,6 +19,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etBitacora" />
 
+    <EditText
+        android:id="@+id/etBitacora"
+        android:layout_width="369dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="72dp"
+        android:ems="10"
+        android:background="#25327D"
+        android:textColor="#ffffff"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btPag1"
         android:layout_width="wrap_content"
@@ -41,17 +55,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btPag1" />
 
-    <EditText
-        android:id="@+id/etBitacora"
-        android:layout_width="369dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="72dp"
-        android:ems="10"
-        android:background="#A08DC4"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btPag3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="irPag3"
+        android:text="NOTAS"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnPag2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
