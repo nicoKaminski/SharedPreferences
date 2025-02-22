@@ -3,6 +3,8 @@ package com.murek.sharedpreferencesapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -32,6 +34,27 @@ public class SdActivity extends AppCompatActivity {
         binding = ActivitySdBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        setSupportActionBar(binding.toolbar);
+
+    }
+
+    //mostrar y ocultar menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.overflow, menu);
+        return true;
+    }
+
+    //funciones a menu
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.item1) {
+            Toast.makeText(this, "Opcion 1", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.item2) {
+            Toast.makeText(this, "Opcion 2", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.item3) {
+            Toast.makeText(this, "Opcion 3", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void guardarNota(View view) {

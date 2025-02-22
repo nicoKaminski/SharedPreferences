@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".SdActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btGuardarNota"
         android:layout_width="wrap_content"
@@ -14,7 +23,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="56dp"
         android:onClick="guardarNota"
-        android:text="Guardar"
+        android:text="@string/btnGuardar"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNotas" />
@@ -23,7 +32,7 @@
         android:id="@+id/etNotas"
         android:layout_width="369dp"
         android:layout_height="350dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="32dp"
         android:background="#3C763E"
         android:ems="10"
         android:gravity="start|top"
@@ -38,23 +47,23 @@
         android:id="@+id/btConsultarNota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
+        android:layout_marginStart="56dp"
         android:layout_marginTop="56dp"
         android:onClick="consultarNota"
-        android:text="Consultar"
+        android:text="@string/btnConsultar"
         android:textSize="20dp"
         app:layout_constraintStart_toEndOf="@+id/btGuardarNota"
         app:layout_constraintTop_toBottomOf="@+id/etNotas" />
 
     <EditText
         android:id="@+id/etNombreNota"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="361dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
         android:ems="10"
+        android:hint="@string/etNombreNota"
         android:inputType="text"
-        android:hint="Ingrese nombre de nota"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,7 +74,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:onClick="irPag1"
-        android:text="INICIO"
+        android:text="@string/btnBitacora"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -76,7 +85,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="16dp"
         android:onClick="irPag2"
-        android:text="AGENDA"
+        android:text="@string/btnAgenda"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btPag1" />
 
@@ -87,7 +96,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginBottom="16dp"
         android:onClick="irPag3"
-        android:text="NOTAS"
+        android:text="@string/btnNotas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnPag2" />
 

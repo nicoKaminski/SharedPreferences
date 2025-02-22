@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".AgendaActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/etNombre"
         android:layout_width="wrap_content"
@@ -14,7 +23,7 @@
         android:layout_marginStart="52dp"
         android:layout_marginTop="100dp"
         android:ems="10"
-        android:hint="Ingrese un nombre"
+        android:hint="@string/etNombreContacto"
         android:inputType="text"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -28,7 +37,7 @@
         android:layout_marginStart="52dp"
         android:layout_marginTop="72dp"
         android:onClick="guardarInfo"
-        android:text="Guardar"
+        android:text="@string/btnGuardar"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etInfo" />
@@ -40,7 +49,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:onClick="irPag1"
-        android:text="INICIO"
+        android:text="@string/btnBitacora"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -51,7 +60,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="16dp"
         android:onClick="irPag2"
-        android:text="AGENDA"
+        android:text="@string/btnAgenda"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btPag1" />
 
@@ -62,19 +71,19 @@
         android:layout_marginStart="4dp"
         android:layout_marginBottom="16dp"
         android:onClick="irPag3"
-        android:text="NOTAS"
+        android:text="@string/btnNotas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnPag2" />
 
     <EditText
         android:id="@+id/etInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="262dp"
+        android:layout_height="99dp"
         android:layout_marginStart="52dp"
         android:layout_marginTop="52dp"
         android:ems="10"
-        android:hint="Datos del contacto"
         android:gravity="start|top"
+        android:hint="@string/etDatosContacto"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNombre" />
@@ -83,10 +92,10 @@
         android:id="@+id/btnBuscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="72dp"
         android:onClick="buscarInfo"
-        android:text="Buscar"
+        android:text="@string/btnBuscar"
         android:textSize="20dp"
         app:layout_constraintStart_toEndOf="@+id/btGuardar2"
         app:layout_constraintTop_toBottomOf="@+id/etInfo" />

@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">SharedPreferencesApp</string>
+    <string name="btnGuardar">GUARDAR</string>
+    <string name="btnNotas">NOTAS</string>
+    <string name="btnAgenda">AGENDA</string>
+    <string name="btnBitacora">BITACORA</string>
+    <string name="btnBuscar">BUSCAR</string>
+    <string name="btnConsultar">CONSULTAR</string>
+    <string name="etNombreNota">Ingrese nombre de la Nota</string>
+    <string name="etNombreContacto">Nombre contacto</string>
+    <string name="etDatosContacto">Datos de contacto</string>
+    <string name="etInfoBitacora">Comience a escribir aqui...</string>
+    <string name="item1">Opcion 1</string>
+    <string name="item2">Opcion 2</string>
+    <string name="item3">Opcion 3</string>
+
 </resources>

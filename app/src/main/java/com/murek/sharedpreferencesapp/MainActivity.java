@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        setSupportActionBar(binding.toolbar);
+
         String archivos[] = fileList();
         if (archivosExiste(archivos, "informacion")) {
             try {
@@ -50,6 +54,25 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //mostrar y ocultar menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.overflow, menu);
+        return true;
+    }
+
+    //funciones a menu
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.item1) {
+            Toast.makeText(this, "Opcion 1", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.item2) {
+            Toast.makeText(this, "Opcion 2", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.item3) {
+            Toast.makeText(this, "Opcion 3", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     public boolean archivosExiste(String archivos [] , String NombreArchivo) {
         for (int i = 0; i < archivos.length; i++) {
             if (NombreArchivo.equals(archivos[i])) return true;
@@ -57,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
+    //Guardar bitacora
     public void guardarBitacora(View view) {
         try {
             OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput("informacion", Context.MODE_PRIVATE));
@@ -68,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+    // Ir a otras actividades:
     public void irPag1(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
