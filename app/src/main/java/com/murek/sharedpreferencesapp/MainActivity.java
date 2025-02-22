@@ -69,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Opcion 2", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.item3) {
             Toast.makeText(this, "Opcion 3", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.buscar) {
+            Toast.makeText(this, "Icono de buscar", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.compartir) {
+            Toast.makeText(this, "Icono de compartir", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }
